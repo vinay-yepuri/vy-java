@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.4//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.4.dtd">  
+        
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.SQLServerDialect
+      </property>
+      
+      <!-- Disable the second level cache -->
+      <property name = "cache.provider_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
+      <property name="hibernate.cache.region.factory_class">
+         org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+         
+       <property name="hibernate.cache.use_second_level_cache">true</property>
+	 <!--  <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> -->
+		
+      
+      <property name = "hibernate.connection.driver_class">
+         com.microsoft.sqlserver.jdbc.SQLServerDriver
+      </property>
+      
+      <property name = "hibernate.connection.url">
+         jdbc:sqlserver://DESKTOP-JRK1PIS\SQLEXPRESS:50953;databaseName=master;integratedSecurity=true
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         sa
+      </property>
+      
+      <property name = "hibernate.connection.password">
+         admin123
+      </property>
+      
+       <!-- Create database schema on application startup-->
+     <property name="hbm2ddl.auto">update</property>
+        <!-- show the queries prepared by Hibernate-->              
+    <property name="show_sql">true</property>
+      
+      <!-- List of XML mapping files -->
+      <mapping class = "org.javabrains.vinay.dto.UserDetails"/>
+      <mapping class = "org.javabrains.vinay.dto.Vehicle"/>
+      <mapping class = "org.javabrains.vinay.dto.TwoWheeler"/>
+      <mapping class = "org.javabrains.vinay.dto.FourWheeler"/>
+      
+   </session-factory>
+</hibernate-configuration>
