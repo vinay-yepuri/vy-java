@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.4//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.4.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.vinay.hibernate.Employee" table = "EMPLOYEE" lazy="false">
+      
+      <meta attribute = "class-description">
+         This class contains the employee detail. 
+      </meta>
+      
+      <id name = "id" type = "int" column = "id">
+         <generator class="increment"/>
+      </id>
+      <property name = "name" column = "name" type = "string"/>
+      <property name = "sal" column = "sal" type = "int"/>
+   </class>
+</hibernate-mapping>
