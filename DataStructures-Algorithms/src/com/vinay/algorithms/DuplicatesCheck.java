@@ -1,12 +1,15 @@
-/**
+ /**
  * 
  */
 package com.vinay.algorithms;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author VINAY
@@ -27,8 +30,13 @@ public class DuplicatesCheck {
 		
 		System.out.println("======Duplicates Using HashMap======");
 		findDuplicatesUsingHashMap(array);
-
-
+		
+		List<Integer> intList = Arrays.stream(array).boxed().collect(Collectors.toList());
+		
+		Set<Integer> duplicates = new HashSet<>();
+		
+		Set<Integer> duplicates1 = intList.stream().filter(f -> !duplicates.add(f)).collect(Collectors.toSet());
+		System.out.println(duplicates1);
 	}
 	
 	/**

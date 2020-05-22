@@ -13,13 +13,17 @@ public class GenerateAllBinaryString {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int n = 4;
+		int n = 3;
 		int[] arr = new int[4];
-		generateAllBinaryStrings(arr, n, 0);
+	//	generateAllBinaryStrings(arr, n, 0);
+		
+		for (int i = 0; i < (Math.pow(2, n)); i++) {
+			System.out.println(Integer.toBinaryString(i));
+		}
 		
 		String str = "1?0?1?";
 		char[] charArr = str.toCharArray();
-		print(charArr,0);
+	//	print(charArr,0);
 	}
 	
 	/**
